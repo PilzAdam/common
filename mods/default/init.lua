@@ -992,7 +992,8 @@ minetest.register_node("default:junglesapling", {
 	groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1},
 	sounds = default.node_sound_defaults(),
 })
--- alias for tree growing abm in content_abm.cpp
+-- aliases for tree growing abm in content_abm.cpp
+minetest.register_alias("sapling", "default:sapling")
 minetest.register_alias("junglesapling", "default:junglesapling")
 
 minetest.register_node("default:junglegrass", {
