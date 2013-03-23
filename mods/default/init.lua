@@ -1511,8 +1511,13 @@ minetest.register_node("default:furnace", {
 		return true
 	end,
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+		local meta = minetest.env:get_meta(pos)
+		local inv = meta:get_inventory()
 		if listname == "fuel" then
 			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
+				if inv:is_empty("src") then
+					meta:set_string("infotext","Furnace is empty")
+				end
 				return stack:get_count()
 			else
 				return 0
@@ -1524,9 +1529,14 @@ minetest.register_node("default:furnace", {
 		end
 	end,
 	allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-		local stack = ItemStack(minetest.env:get_meta(pos):get_inventory():get_stack(from_list, from_index))
+		local meta = minetest.env:get_meta(pos)
+		local inv = meta:get_inventory()
+		local stack = inv:get_stack(from_list, from_index)
 		if to_list == "fuel" then
 			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
+				if inv:is_empty("src") then
+					meta:set_string("infotext","Furnace is empty")
+				end
 				return count
 			else
 				return 0
@@ -1571,8 +1581,13 @@ minetest.register_node("default:furnace_active", {
 		return true
 	end,
 	allow_metadata_inventory_put = function(pos, listname, index, stack, player)
+		local meta = minetest.env:get_meta(pos)
+		local inv = meta:get_inventory()
 		if listname == "fuel" then
 			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
+				if inv:is_empty("src") then
+					meta:set_string("infotext","Furnace is empty")
+				end
 				return stack:get_count()
 			else
 				return 0
@@ -1584,9 +1599,14 @@ minetest.register_node("default:furnace_active", {
 		end
 	end,
 	allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
-		local stack = ItemStack(minetest.env:get_meta(pos):get_inventory():get_stack(from_list, from_index))
+		local meta = minetest.env:get_meta(pos)
+		local inv = meta:get_inventory()
+		local stack = inv:get_stack(from_list, from_index)
 		if to_list == "fuel" then
 			if minetest.get_craft_result({method="fuel",width=1,items={stack}}).time ~= 0 then
+				if inv:is_empty("src") then
+					meta:set_string("infotext","Furnace is empty")
+				end
 				return count
 			else
 				return 0
