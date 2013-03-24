@@ -97,6 +97,10 @@ PilzAdam (WTFPL):
   default_obsidian_glass.png
   default_obsidian_shard.png
   default_mossycobble.png
+  default_gold_block.png
+  default_gold_ingot.png
+  default_gold_lump.png
+  default_mineral_gold.png
 
 jojoa1997 (WTFPL):
   default_obsidian.png

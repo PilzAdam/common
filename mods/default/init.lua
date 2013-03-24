@@ -422,6 +422,22 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:goldblock',
+	recipe = {
+		{'default:gold_ingot', 'default:gold_ingot', 'default:gold_ingot'},
+		{'default:gold_ingot', 'default:gold_ingot', 'default:gold_ingot'},
+		{'default:gold_ingot', 'default:gold_ingot', 'default:gold_ingot'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:gold_ingot 9',
+	recipe = {
+		{'default:goldblock'},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:sandstone',
 	recipe = {
 		{'group:sand', 'group:sand'},
@@ -574,6 +590,12 @@ minetest.register_craft({
 	type = "cooking",
 	output = "default:steel_ingot",
 	recipe = "default:iron_lump",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "default:gold_ingot",
+	recipe = "default:gold_lump",
 })
 
 minetest.register_craft({
@@ -833,6 +855,15 @@ minetest.register_node("default:stone_with_mese", {
 	is_ground_content = true,
 	groups = {cracky=1},
 	drop = "default:mese_crystal",
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:stone_with_gold", {
+	description = "Gold Ore",
+	tiles = {"default_stone.png^default_mineral_gold.png"},
+	is_ground_content = true,
+	groups = {cracky=2},
+	drop = "default:gold_lump",
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -1760,11 +1791,18 @@ minetest.register_node("default:mese", {
 	description = "Mese Block",
 	tiles = {"default_mese_block.png"},
 	is_ground_content = true,
-	groups = {cracky=1},
+	groups = {cracky=1,level=2},
 	sounds = default.node_sound_stone_defaults(),
 })
 minetest.register_alias("default:mese_block", "default:mese")
 
+minetest.register_node("default:goldblock", {
+	description = "Gold Block",
+	tiles = {"default_gold_block.png"},
+	is_ground_content = true,
+	groups = {cracky=1},
+	sounds = default.node_sound_stone_defaults(),
+})
 
 minetest.register_node("default:obsidian_glass", {
 	description = "Obsidian Glass",
@@ -1983,6 +2021,11 @@ minetest.register_craftitem("default:mese_crystal", {
 	inventory_image = "default_mese_crystal.png",
 })
 
+minetest.register_craftitem("default:gold_lump", {
+	description = "Gold Lump",
+	inventory_image = "default_gold_lump.png",
+})
+
 minetest.register_craftitem("default:clay_lump", {
 	description = "Clay Lump",
 	inventory_image = "default_clay_lump.png",
@@ -1991,6 +2034,11 @@ minetest.register_craftitem("default:clay_lump", {
 minetest.register_craftitem("default:steel_ingot", {
 	description = "Steel Ingot",
 	inventory_image = "default_steel_ingot.png",
+})
+
+minetest.register_craftitem("default:gold_ingot", {
+	description = "Gold Ingot",
+	inventory_image = "default_gold_ingot.png"
 })
 
 minetest.register_craftitem("default:mese_crystal_fragment", {
