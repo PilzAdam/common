@@ -101,9 +101,21 @@ PilzAdam (WTFPL):
   default_gold_ingot.png
   default_gold_lump.png
   default_mineral_gold.png
+  default_diamond.png
+  default_diamond_block.png
+  default_tool_diamondpick.png
+  default_tool_diamondsword.png
+  default_tool_diamondshovel.png
+  default_tool_diamondaxe.png
+  default_tool_meseaxe.png
+  default_tool_meseshovel.png
+  default_tool_mesesword.png
 
 jojoa1997 (WTFPL):
   default_obsidian.png
+
+InfinityProject (WTFPL):
+  default_mineral_diamond.png
 
 Glass breaking sounds (CC BY 3.0):
   1: http://www.freesound.org/people/cmusounddesign/sounds/71947/
