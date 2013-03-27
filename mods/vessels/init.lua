@@ -1,11 +1,20 @@
 -- Minetest 0.4 mod: vessels
 -- See README.txt for licensing and other information.
 
-minetest.register_craftitem("vessels:glass_bottle", {
+minetest.register_node("vessels:glass_bottle", {
 	description = "Glass Bottle (empty)",
+	drawtype = "plantlike",
+	tiles = {"vessels_glass_bottle.png"},
 	inventory_image = "vessels_glass_bottle_inv.png",
 	wield_image = "vessels_glass_bottle.png",
-	groups = {vessel=1},
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+	},
+	groups = {vessel=1,dig_immediate=3,attached_node=1},
+	sounds = default.node_sound_glass_defaults(),
 })
 
 minetest.register_craft( {
@@ -17,11 +26,20 @@ minetest.register_craft( {
 	}
 })
 
-minetest.register_craftitem("vessels:drinking_glass", {
+minetest.register_node("vessels:drinking_glass", {
 	description = "Drinking Glass (empty)",
+	drawtype = "plantlike",
+	tiles = {"vessels_drinking_glass.png"},
 	inventory_image = "vessels_drinking_glass_inv.png",
 	wield_image = "vessels_drinking_glass.png",
-	groups = {vessel=1},
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+	},
+	groups = {vessel=1,dig_immediate=3,attached_node=1},
+	sounds = default.node_sound_glass_defaults(),
 })
 
 minetest.register_craft( {
@@ -33,11 +51,20 @@ minetest.register_craft( {
 	}
 })
 
-minetest.register_craftitem("vessels:steel_bottle", {
+minetest.register_node("vessels:steel_bottle", {
 	description = "Heavy Steel Bottle (empty)",
+	drawtype = "plantlike",
+	tiles = {"vessels_steel_bottle.png"},
 	inventory_image = "vessels_steel_bottle_inv.png",
 	wield_image = "vessels_steel_bottle.png",
-	groups = {vessel=1},
+	paramtype = "light",
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+	},
+	groups = {vessel=1,dig_immediate=3,attached_node=1},
+	sounds = default.node_sound_defaults(),
 })
 
 minetest.register_craft( {
