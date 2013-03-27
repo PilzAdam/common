@@ -79,10 +79,10 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:stone_with_mese",
 	wherein        = "default:stone",
-	clust_scarcity = 16*16*16,
+	clust_scarcity = 18*18*18,
 	clust_num_ores = 3,
 	clust_size     = 2,
-	height_min     = -127,
+	height_min     = -255,
 	height_max     = -64,
 })
 
@@ -90,11 +90,11 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:stone_with_mese",
 	wherein        = "default:stone",
-	clust_scarcity = 12*12*12,
+	clust_scarcity = 14*14*14,
 	clust_num_ores = 5,
 	clust_size     = 3,
 	height_min     = -31000,
-	height_max     = -128,
+	height_max     = -256,
 })
 
 minetest.register_ore({
