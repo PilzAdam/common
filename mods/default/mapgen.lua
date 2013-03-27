@@ -152,6 +152,17 @@ minetest.register_ore({
 	height_max     = -256,
 })
 
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "default:stone_with_diamond",
+	wherein        = "default:stone",
+	clust_scarcity = 14*14*14,
+	clust_num_ores = 4,
+	clust_size     = 3,
+	height_min     = -31000,
+	height_max     = -128,
+})
+
 function default.generate_ore(name, wherein, minp, maxp, seed, chunks_per_volume, chunk_size, ore_per_chunk, height_min, height_max)
 	minetest.log('action', "WARNING: default.generate_ore is deprecated")
 
