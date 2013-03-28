@@ -74,6 +74,18 @@ minetest.register_tool("default:pick_steel", {
 		}
 	},
 })
+minetest.register_tool("default:pick_bronze", {
+	description = "Bronze Pickaxe",
+	inventory_image = "default_tool_bronzepick.png",
+	tool_capabilities = {
+		full_punch_interval = 1.0,
+		max_drop_level=1,
+		groupcaps={
+			cracky = {times={[1]=4.00, [2]=1.60, [3]=0.80}, uses=30, maxlevel=2},
+			fleshy = {times={[2]=0.6, [3]=0.35}, uses=45, maxlevel=1}
+		}
+	},
+})
 minetest.register_tool("default:pick_mese", {
 	description = "Mese Pickaxe",
 	inventory_image = "default_tool_mesepick.png",
@@ -136,6 +148,19 @@ minetest.register_tool("default:shovel_steel", {
 		groupcaps={
 			crumbly = {times={[1]=1.50, [2]=0.90, [3]=0.40}, uses=30, maxlevel=2},
 			fleshy = {times={[2]=0.45, [3]=0.30}, uses=50, maxlevel=1}
+		}
+	},
+})
+minetest.register_tool("default:shovel_bronze", {
+	description = "Bronze Shovel",
+	inventory_image = "default_tool_bronzeshovel.png",
+	wield_image = "default_tool_bronzeshovel.png^[transformR90",
+	tool_capabilities = {
+		full_punch_interval = 1.1,
+		max_drop_level=1,
+		groupcaps={
+			crumbly = {times={[1]=1.50, [2]=0.90, [3]=0.40}, uses=40, maxlevel=2},
+			fleshy = {times={[2]=0.45, [3]=0.30}, uses=60, maxlevel=1}
 		}
 	},
 })
@@ -203,6 +228,18 @@ minetest.register_tool("default:axe_steel", {
 		}
 	},
 })
+minetest.register_tool("default:axe_bronze", {
+	description = "Bronze Axe",
+	inventory_image = "default_tool_bronzeaxe.png",
+	tool_capabilities = {
+		full_punch_interval = 0.9,
+		max_drop_level=1,
+		groupcaps={
+			choppy={times={[1]=2.50, [2]=1.40, [3]=1.00}, uses=30, maxlevel=2},
+			fleshy={times={[2]=0.40, [3]=0.25}, uses=35, maxlevel=1}
+		}
+	},
+})
 minetest.register_tool("default:axe_mese", {
 	description = "Mese Axe",
 	inventory_image = "default_tool_meseaxe.png",
@@ -262,6 +299,18 @@ minetest.register_tool("default:sword_steel", {
 		groupcaps={
 			fleshy={times={[1]=2.00, [2]=0.80, [3]=0.40}, uses=10, maxlevel=2},
 			snappy={times={[1]=2.5, [2]=1.20, [3]=0.35}, uses=30, maxlevel=2},
+		}
+	}
+})
+minetest.register_tool("default:sword_bronze", {
+	description = "Bronze Sword",
+	inventory_image = "default_tool_bronzesword.png",
+	tool_capabilities = {
+		full_punch_interval = 1,
+		max_drop_level=1,
+		groupcaps={
+			fleshy={times={[1]=2.00, [2]=0.80, [3]=0.40}, uses=20, maxlevel=2},
+			snappy={times={[1]=2.5, [2]=1.20, [3]=0.35}, uses=40, maxlevel=2},
 		}
 	}
 })
@@ -368,6 +417,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:pick_bronze',
+	recipe = {
+		{'default:bronze_ingot', 'default:bronze_ingot', 'default:bronze_ingot'},
+		{'', 'default:stick', ''},
+		{'', 'default:stick', ''},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:pick_mese',
 	recipe = {
 		{'default:mese_crystal', 'default:mese_crystal', 'default:mese_crystal'},
@@ -407,6 +465,15 @@ minetest.register_craft({
 	output = 'default:shovel_steel',
 	recipe = {
 		{'default:steel_ingot'},
+		{'default:stick'},
+		{'default:stick'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:shovel_bronze',
+	recipe = {
+		{'default:bronze_ingot'},
 		{'default:stick'},
 		{'default:stick'},
 	}
@@ -458,6 +525,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:axe_bronze',
+	recipe = {
+		{'default:bronze_ingot', 'default:bronze_ingot'},
+		{'default:bronze_ingot', 'default:stick'},
+		{'', 'default:stick'},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:sword_wood',
 	recipe = {
 		{'group:wood'},
@@ -480,6 +556,15 @@ minetest.register_craft({
 	recipe = {
 		{'default:steel_ingot'},
 		{'default:steel_ingot'},
+		{'default:stick'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:sword_bronze',
+	recipe = {
+		{'default:bronze_ingot'},
+		{'default:bronze_ingot'},
 		{'default:stick'},
 	}
 })
@@ -521,6 +606,12 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	type = "shapeless",
+	output = "default:bronze_ingot",
+	recipe = {"default:steel_ingot", "default:copper_ingot"},
+})
+
+minetest.register_craft({
 	output = 'default:steelblock',
 	recipe = {
 		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
@@ -533,6 +624,22 @@ minetest.register_craft({
 	output = 'default:steel_ingot 9',
 	recipe = {
 		{'default:steelblock'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:bronzeblock',
+	recipe = {
+		{'default:bronze_ingot', 'default:bronze_ingot', 'default:bronze_ingot'},
+		{'default:bronze_ingot', 'default:bronze_ingot', 'default:bronze_ingot'},
+		{'default:bronze_ingot', 'default:bronze_ingot', 'default:bronze_ingot'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:bronze_ingot 9',
+	recipe = {
+		{'default:bronzeblock'},
 	}
 })
 
@@ -705,6 +812,12 @@ minetest.register_craft({
 	type = "cooking",
 	output = "default:steel_ingot",
 	recipe = "default:iron_lump",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "default:copper_ingot",
+	recipe = "default:copper_lump",
 })
 
 minetest.register_craft({
@@ -961,6 +1074,15 @@ minetest.register_node("default:stone_with_iron", {
 	is_ground_content = true,
 	groups = {cracky=2},
 	drop = 'default:iron_lump',
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:stone_with_copper", {
+	description = "Copper Ore",
+	tiles = {"default_stone.png^default_mineral_copper.png"},
+	is_ground_content = true,
+	groups = {cracky=2},
+	drop = 'default:copper_lump',
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -1896,7 +2018,15 @@ minetest.register_node("default:steelblock", {
 	description = "Steel Block",
 	tiles = {"default_steel_block.png"},
 	is_ground_content = true,
-	groups = {bendy=2,cracky=1,melty=2,level=2},
+	groups = {cracky=1,level=2},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:bronzeblock", {
+	description = "Bronze Block",
+	tiles = {"default_bronze_block.png"},
+	is_ground_content = true,
+	groups = {cracky=1,level=2},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -2140,6 +2270,11 @@ minetest.register_craftitem("default:iron_lump", {
 	inventory_image = "default_iron_lump.png",
 })
 
+minetest.register_craftitem("default:copper_lump", {
+	description = "Copper Lump",
+	inventory_image = "default_copper_lump.png",
+})
+
 minetest.register_craftitem("default:mese_crystal", {
 	description = "Mese Crystal",
 	inventory_image = "default_mese_crystal.png",
@@ -2163,6 +2298,16 @@ minetest.register_craftitem("default:clay_lump", {
 minetest.register_craftitem("default:steel_ingot", {
 	description = "Steel Ingot",
 	inventory_image = "default_steel_ingot.png",
+})
+
+minetest.register_craftitem("default:copper_ingot", {
+	description = "Copper Ingot",
+	inventory_image = "default_copper_ingot.png",
+})
+
+minetest.register_craftitem("default:bronze_ingot", {
+	description = "Bronze Ingot",
+	inventory_image = "default_bronze_ingot.png",
 })
 
 minetest.register_craftitem("default:gold_ingot", {

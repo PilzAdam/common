@@ -78,11 +78,16 @@ VanessaE (WTFPL):
   default_nc_side.png
   default_grass_*.png
 
-Calinou's improved default textures (CC BY-SA):
+Calinou (CC BY-SA):
   default_brick.png
   default_clay_brick.png
   default_papyrus.png
   default_tool_steelsword.png
+  default_bronze_block.png
+  default_bronze_ingot.png
+  default_copper_ingot.png
+  default_copper_lump.png
+  default_mineral_copper.png
 
 MirceaKitsune (WTFPL):
   character.x
@@ -110,6 +115,10 @@ PilzAdam (WTFPL):
   default_tool_meseaxe.png
   default_tool_meseshovel.png
   default_tool_mesesword.png
+  default_tool_bronzeaxe.png
+  default_tool_bronzepick.png
+  default_tool_bronzeshovel.png
+  default_tool_bronzesword.png
 
 jojoa1997 (WTFPL):
   default_obsidian.png
