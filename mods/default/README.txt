@@ -108,6 +108,7 @@ PilzAdam (WTFPL):
   default_mineral_gold.png
   default_diamond.png
   default_diamond_block.png
+  default_copper_block.png
   default_tool_diamondpick.png
   default_tool_diamondsword.png
   default_tool_diamondshovel.png

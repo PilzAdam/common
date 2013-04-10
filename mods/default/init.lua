@@ -664,6 +664,22 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:copperblock',
+	recipe = {
+		{'default:copper_ingot', 'default:copper_ingot', 'default:copper_ingot'},
+		{'default:copper_ingot', 'default:copper_ingot', 'default:copper_ingot'},
+		{'default:copper_ingot', 'default:copper_ingot', 'default:copper_ingot'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:copper_ingot 9',
+	recipe = {
+		{'default:copperblock'},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:bronzeblock',
 	recipe = {
 		{'default:bronze_ingot', 'default:bronze_ingot', 'default:bronze_ingot'},
@@ -2071,6 +2087,14 @@ minetest.register_node("default:mossycobble", {
 minetest.register_node("default:steelblock", {
 	description = "Steel Block",
 	tiles = {"default_steel_block.png"},
+	is_ground_content = true,
+	groups = {cracky=1,level=2},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:copperblock", {
+	description = "Copper Block",
+	tiles = {"default_copper_block.png"},
 	is_ground_content = true,
 	groups = {cracky=1,level=2},
 	sounds = default.node_sound_stone_defaults(),
