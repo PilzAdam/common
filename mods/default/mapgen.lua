@@ -51,6 +51,7 @@ minetest.register_ore({
 	clust_size     = 6,
 	height_min     = -31000,
 	height_max     = 0,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -84,6 +85,7 @@ minetest.register_ore({
 	clust_size     = 3,
 	height_min     = -31000,
 	height_max     = -64,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -95,6 +97,7 @@ minetest.register_ore({
 	clust_size     = 6,
 	height_min     = -31000,
 	height_max     = -64,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -106,6 +109,7 @@ minetest.register_ore({
 	clust_size     = 2,
 	height_min     = -255,
 	height_max     = -64,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -117,6 +121,7 @@ minetest.register_ore({
 	clust_size     = 3,
 	height_min     = -31000,
 	height_max     = -256,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -128,6 +133,7 @@ minetest.register_ore({
 	clust_size     = 2,
 	height_min     = -31000,
 	height_max     = -1024,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -139,6 +145,7 @@ minetest.register_ore({
 	clust_size     = 2,
 	height_min     = -255,
 	height_max     = -64,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -150,6 +157,7 @@ minetest.register_ore({
 	clust_size     = 3,
 	height_min     = -31000,
 	height_max     = -256,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -161,6 +169,7 @@ minetest.register_ore({
 	clust_size     = 3,
 	height_min     = -255,
 	height_max     = -128,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -172,6 +181,7 @@ minetest.register_ore({
 	clust_size     = 3,
 	height_min     = -31000,
 	height_max     = -256,
+	flags          = "absheight",
 })
 
 minetest.register_ore({
@@ -194,7 +204,71 @@ minetest.register_ore({
 	clust_size     = 3,
 	height_min     = -31000,
 	height_max     = -64,
+	flags          = "absheight",
 })
+
+if minetest.setting_get("mg_name") == "indev" then
+	-- Floatlands and high mountains springs
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:water_source",
+		ore_param2     = 128,
+		wherein        = "default:stone",
+		clust_scarcity = 40*40*40,
+		clust_num_ores = 8,
+		clust_size     = 3,
+		height_min     = 100,
+		height_max     = 31000,
+	})
+
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:lava_source",
+		ore_param2     = 128,
+		wherein        = "default:stone",
+		clust_scarcity = 50*50*50,
+		clust_num_ores = 5,
+		clust_size     = 2,
+		height_min     = 10000,
+		height_max     = 31000,
+	})
+
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:sand",
+		wherein        = "default:stone",
+		clust_scarcity = 20*20*20,
+		clust_num_ores = 5*5*3,
+		clust_size     = 5,
+		height_min     = 500,
+		height_max     = 31000,
+	})
+
+	-- Underground springs
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:water_source",
+		ore_param2     = 128,
+		wherein        = "default:stone",
+		clust_scarcity = 25*25*25,
+		clust_num_ores = 8,
+		clust_size     = 3,
+		height_min     = -10000,
+		height_max     = -10,
+	})
+
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:lava_source",
+		ore_param2     = 128,
+		wherein        = "default:stone",
+		clust_scarcity = 35*35*35,
+		clust_num_ores = 5,
+		clust_size     = 2,
+		height_min     = -31000,
+		height_max     = -100,
+	})
+end
 
 function default.generate_ore(name, wherein, minp, maxp, seed, chunks_per_volume, chunk_size, ore_per_chunk, height_min, height_max)
 	minetest.log('action', "WARNING: default.generate_ore is deprecated")
