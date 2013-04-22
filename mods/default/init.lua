@@ -648,6 +648,22 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:coalblock',
+	recipe = {
+		{'default:coal_lump', 'default:coal_lump', 'default:coal_lump'},
+		{'default:coal_lump', 'default:coal_lump', 'default:coal_lump'},
+		{'default:coal_lump', 'default:coal_lump', 'default:coal_lump'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:coal_lump 9',
+	recipe = {
+		{'default:coalblock'},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:steelblock',
 	recipe = {
 		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
@@ -1032,6 +1048,12 @@ minetest.register_craft({
 	type = "fuel",
 	recipe = "default:coal_lump",
 	burntime = 40,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "default:coalblock",
+	burntime = 370,
 })
 
 minetest.register_craft({
@@ -2121,6 +2143,14 @@ minetest.register_node("default:cobble", {
 minetest.register_node("default:mossycobble", {
 	description = "Mossy Cobblestone",
 	tiles = {"default_mossycobble.png"},
+	is_ground_content = true,
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:coalblock", {
+	description = "Coal Block",
+	tiles = {"default_coal_block.png"},
 	is_ground_content = true,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
