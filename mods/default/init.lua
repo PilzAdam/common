@@ -743,6 +743,14 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:sandstonebrick',
+	recipe = {
+		{'default:sandstone', 'default:sandstone'},
+		{'default:sandstone', 'default:sandstone'},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:clay',
 	recipe = {
 		{'default:clay_lump', 'default:clay_lump'},
@@ -843,6 +851,14 @@ minetest.register_craft({
 	recipe = {
 		{'default:stone', 'default:stone'},
 		{'default:stone', 'default:stone'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:desert_stonebrick',
+	recipe = {
+		{'default:desert_stone', 'default:desert_stone'},
+		{'default:desert_stone', 'default:desert_stone'},
 	}
 })
 
@@ -1186,7 +1202,14 @@ minetest.register_node("default:stone_with_diamond", {
 minetest.register_node("default:stonebrick", {
 	description = "Stone Brick",
 	tiles = {"default_stone_brick.png"},
-	groups = {cracky=3, stone=1},
+	groups = {cracky=2, stone=1},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:desert_stonebrick", {
+	description = "Desert Stone Brick",
+	tiles = {"default_desert_stone_brick.png"},
+	groups = {cracky=2, stone=1},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -1261,7 +1284,15 @@ minetest.register_node("default:sandstone", {
 	description = "Sandstone",
 	tiles = {"default_sandstone.png"},
 	is_ground_content = true,
-	groups = {crumbly=2,cracky=2},
+	groups = {crumbly=2,cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+})
+
+minetest.register_node("default:sandstonebrick", {
+	description = "Sandstone Brick",
+	tiles = {"default_sandstone_brick.png"},
+	is_ground_content = true,
+	groups = {cracky=2},
 	sounds = default.node_sound_stone_defaults(),
 })
 

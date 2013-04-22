@@ -39,7 +39,6 @@ Cisoun's WTFPL texture pack:
   default_jungletree_top.png
   default_lava.png
   default_leaves.png
-  default_sand.png
   default_sapling.png
   default_sign_wall.png
   default_stone.png
@@ -77,6 +76,11 @@ VanessaE (WTFPL):
   default_nc_rb.png
   default_nc_side.png
   default_grass_*.png
+  default_desert_sand.png
+  default_desert_stone.png
+  default_desert_stone_brick.png
+  default_sand.png
+  default_sandstone_brick.png
 
 Calinou (CC BY-SA):
   default_brick.png
