@@ -120,12 +120,18 @@ PilzAdam (WTFPL):
   default_tool_bronzepick.png
   default_tool_bronzeshovel.png
   default_tool_bronzesword.png
+  default_snowball.png
 
 jojoa1997 (WTFPL):
   default_obsidian.png
 
 InfinityProject (WTFPL):
   default_mineral_diamond.png
+
+Splizard (CC BY-SA 3.0):
+  default_snow.png
+  default_snow_side.png
+  default_ice.png
 
 Glass breaking sounds (CC BY 3.0):
   1: http://www.freesound.org/people/cmusounddesign/sounds/71947/
