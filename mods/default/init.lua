@@ -2419,6 +2419,12 @@ minetest.register_node("default:snow", {
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
+	on_construct = function(pos)
+		pos.y = pos.y - 1
+		if minetest.env:get_node(pos).name == "default:dirt_with_grass" then
+			minetest.env:set_node(pos, {name="default:dirt_with_snow"})
+		end
+	end,
 })
 
 --
