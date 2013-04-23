@@ -878,6 +878,22 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = 'default:snowblock',
+	recipe = {
+		{'default:snow', 'default:snow', 'default:snow'},
+		{'default:snow', 'default:snow', 'default:snow'},
+		{'default:snow', 'default:snow', 'default:snow'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:snow 9',
+	recipe = {
+		{'default:snowblock'},
+	}
+})
+
 --
 -- Crafting (tool repair)
 --
@@ -1267,6 +1283,7 @@ minetest.register_node("default:dirt_with_snow", {
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
 })
+minetest.register_alias("dirt_with_snow", "default:dirt_with_snow")
 
 minetest.register_node("default:dirt", {
 	description = "Dirt",
@@ -2425,6 +2442,17 @@ minetest.register_node("default:snow", {
 			minetest.env:set_node(pos, {name="default:dirt_with_snow"})
 		end
 	end,
+})
+minetest.register_alias("snow", "default:snow")
+
+minetest.register_node("default:snowblock", {
+	description = "Snow Block",
+	tiles = {"default_snow.png"},
+	is_ground_content = true,
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name="default_grass_footstep", gain=0.4},
+	}),
 })
 
 --
