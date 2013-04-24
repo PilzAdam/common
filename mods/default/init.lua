@@ -1831,7 +1831,7 @@ minetest.register_node("default:chest_locked", {
 	can_dig = function(pos,player)
 		local meta = minetest.env:get_meta(pos);
 		local inv = meta:get_inventory()
-		return inv:is_empty("main")
+		return inv:is_empty("main") and has_locked_chest_privilege(meta, player)
 	end,
 	allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
 		local meta = minetest.env:get_meta(pos)
