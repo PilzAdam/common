@@ -2411,6 +2411,8 @@ minetest.register_node("default:grass_5", {
 minetest.register_node("default:ice", {
 	description = "Ice",
 	tiles = {"default_ice.png"},
+	drawtype = "glasslike",
+	use_texture_alpha = true,
 	is_ground_content = true,
 	paramtype = "light",
 	groups = {cracky=3},
